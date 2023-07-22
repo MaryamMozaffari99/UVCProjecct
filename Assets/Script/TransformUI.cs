@@ -21,9 +21,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
-using RTG;
-
-
 
 public class TransformUI : MonoBehaviour
 {
@@ -65,11 +62,10 @@ public class TransformUI : MonoBehaviour
     private float scaleX;
     private float scaleY;
     private float scaleZ;
-    public TMP_Dropdown axisDropDown;
+    private TMP_Dropdown axisDropDown;
     private TMP_Dropdown scaleDropDown;
-    public bool isAxisGlobal = true;
-    public bool isScaleEven = true;
-
+    private bool isAxisGlobal = true;
+    private bool isScaleEven = true;
 
     private void Start()
     {
@@ -164,15 +160,6 @@ public class TransformUI : MonoBehaviour
         if (selection && !inputScaleX.isFocused && !inputScaleY.isFocused && !inputScaleZ.isFocused)
         {
             GetSelectedScale();
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            isAxisGlobal = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            isAxisGlobal = false;
         }
     }
 
@@ -471,10 +458,7 @@ public class TransformUI : MonoBehaviour
         {
             isAxisGlobal = false;
         }
-
     }
-
-
 
     //Scale drop down menu
     public void OnScaleDropDownChange()
